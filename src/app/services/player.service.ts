@@ -8,6 +8,7 @@ export class PlayerService {
 
   players: any
   player: Player = new Player;
+  
 
   constructor() {
     this.players = localStorage.getItem('players') ? localStorage.getItem('players') : null
@@ -16,7 +17,7 @@ export class PlayerService {
 
   createPlayer(data: any){
     // Add player to local storage
-    localStorage['name'] = data.value.name;
+    localStorage['name'] = data.value.name
 
     return new Promise<Player>((resolve, reject) => {
       const position = this.players.findIndex((p:any) => p.name === data.value.name)

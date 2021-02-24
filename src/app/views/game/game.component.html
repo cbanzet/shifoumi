@@ -38,14 +38,19 @@
       <span [ngClass]="winner==='user' ? 'bggreen' : 'bgred'">{{ inFewWords }}</span>
     </div>
 
+    <div id="infewwords" fxFlex="8" fxLayoutAlign="center center" class="score">
+      {{ currentuserscore }}  /  {{ computerscore }}
+    </div>
+
     <div fxFlex="100" fxLayoutAlign="center center" style="margin:50px 0" fxLayoutGap="20px">
       <button mat-fab  color="black"
-        (click)="result=false;sentence = 'Are you ready'"
+        (click)="playAgain()"
         matTooltip="Play again" matTooltipPosition="before">
         <mat-icon>cached</mat-icon>
       </button>
       <button mat-fab  color="black"
         routerLink="./../player"
+        (click)="changePlayer()"
         matTooltip="Change Player" matTooltipPosition="after">
         <mat-icon>person_add</mat-icon>
       </button>

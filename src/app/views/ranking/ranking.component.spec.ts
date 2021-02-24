@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Player } from './../../models/player';
 import { PlayerService } from './../../services/player.service';
 import { RankingComponent } from './ranking.component';
 
@@ -8,7 +9,9 @@ describe('RankingComponent', () => {
   let fixture: ComponentFixture<RankingComponent>;
 
   beforeEach(() => {
-    const playerServiceStub = () => ({ getAllPlayers: () => ({}) });
+    const playerServiceStub = () => ({
+      getAllPlayers: () => ({ sort: () => ({}) })
+    });
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [RankingComponent],
@@ -35,6 +38,6 @@ describe('RankingComponent', () => {
   });
 
   it(`displayedColumns has default value`, () => {
-    expect(component.displayedColumns).toEqual([`name`, `victory`]);
+    expect(component.displayedColumns).toEqual([`name`, `games`, `victory`]);
   });
 });
