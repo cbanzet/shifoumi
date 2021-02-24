@@ -1,0 +1,17 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { GameComponent } from './views/game/game.component';
+import { PlayerComponent } from './views/player/player.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/player', pathMatch: 'full' },
+  { path : 'player', component : PlayerComponent },
+  { path : 'game', component : GameComponent },
+];
+
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

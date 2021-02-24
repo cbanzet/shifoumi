@@ -1,0 +1,40 @@
+section fa-icon {
+  font-size: 8em;
+  padding: 20px;
+}
+
+#iconsBefore fa-icon {
+  color: #ccc;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#iconsBefore fa-icon:hover {
+  color: #000;
+  font-size: 8.2em;
+}
+
+
+.green {
+  color: #00E227;
+}
+.red {
+  color:#f44336;
+}
+.grey {
+  color: #999;
+}
+.bggreen {
+  background-color: #00E227;
+}
+.bgred {
+  background-color: #f44336;
+}
+
+#infewwords span{
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 5px 20px;
+  transform: rotate(5deg)
+}
+

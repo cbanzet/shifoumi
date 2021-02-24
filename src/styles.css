@@ -1,0 +1,13 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1{
+  font-size: 7em;
+  font-weight: bold;
+}
+h2 {
+  font: 500 30px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+p {
+  text-align: center;
+  color: #999;
+}

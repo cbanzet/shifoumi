@@ -1,0 +1,25 @@
+
+
+<form [formGroup]="formPlayer">
+
+  <div fxLayout="row wrap" fxLayoutAlign="start start" style="padding:10px">
+
+    <h1>PLAY SHI FOU MI</h1>
+    <h2 fxFlex="100">What's your name ?</h2>
+
+    <mat-form-field fxFlex="100">
+      <input matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
+
+    <div fxFlex="100" fxLayoutAlign="end end">
+      <button mat-fab  color="warn"
+      type="button"
+      [disabled]="formPlayer.invalid"
+      (click)="onSubmit()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</form>

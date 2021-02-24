@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  color: #999;
+  box-shadow: none
+}
+
+.percentage {
+  padding: 10px;
+  background-color: #999;
+  color: #FFF;
+  border-radius: 40px;
+  font-size: 0.8em;
+  font-weight: bold;
+}

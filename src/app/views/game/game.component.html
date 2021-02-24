@@ -1,0 +1,64 @@
+
+<section fxLayout="column" fxLayoutAlign="center center">
+
+  <h2 *ngIf="player"><span [ngClass]="winner==='user' ? 'green' : 'red'">{{ sentence }}</span> {{ player.name }} ?</h2>
+
+  <section id="iconsBefore" *ngIf="!result" fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="30px">
+    <fa-icon (click)="launchGame('rock')" [icon]="rock"></fa-icon>
+    <fa-icon (click)="launchGame('paper')" [icon]="paper"></fa-icon>
+    <fa-icon (click)="launchGame('scissors')" [icon]="scissors"></fa-icon>
+  </section>
+
+
+  <section *ngIf="result" fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <div fxFlex="40" fxLayout="column" fxLayoutAlign="center center">
+      <fa-icon
+      *ngIf="getIcon(playerChoice.id)"
+      [icon]="getIcon(playerChoice.id)"
+      [ngClass]="winner==='user' ? 'green' : 'red'"></fa-icon>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-icon class="grey">face</mat-icon>
+        <p>Your choice</p>
+      </div>
+    </div>
+
+    <div fxFlex="40" fxLayout="column" fxLayoutAlign="center center">
+      <fa-icon
+      *ngIf="getIcon(computerChoice.id)"
+      [icon]="getIcon(computerChoice.id)"
+      [ngClass]="winner==='computer' ? 'green' : 'red'"></fa-icon>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-icon class="grey">computer</mat-icon>
+        <p>Computer choice</p>
+      </div>
+    </div>
+
+    <div id="infewwords" fxFlex="100" fxLayoutAlign="center center">
+      <span [ngClass]="winner==='user' ? 'bggreen' : 'bgred'">{{ inFewWords }}</span>
+    </div>
+
+    <div fxFlex="100" fxLayoutAlign="center center" style="margin:50px 0" fxLayoutGap="20px">
+      <button mat-fab  color="black"
+        (click)="result=false;sentence = 'Are you ready'"
+        matTooltip="Play again" matTooltipPosition="before">
+        <mat-icon>cached</mat-icon>
+      </button>
+      <button mat-fab  color="black"
+        routerLink="./../player"
+        matTooltip="Change Player" matTooltipPosition="after">
+        <mat-icon>person_add</mat-icon>
+      </button>
+    </div>
+
+    <div fxFlex="40" style="margin: 10px 0 0">
+      <app-ranking></app-ranking>
+    </div>
+
+
+  </section>
+
+
+
+
+</section>
